@@ -107,29 +107,40 @@ class _FlipCardGaneState extends State<FlipCardGane> {
                   },
                   icon: const Icon(Icons.arrow_back)),
             ),
-            body: Center(
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    restart();
-                  });
-                },
-                child: Container(
-                  height: 50,
-                  width: 200,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(24),
+            body: Padding(
+              padding: const EdgeInsets.all(25),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Text("Congratulations\nWell done \n 🎉🎉🎉🎉🎉🎉🎉🎉",
+                      style: TextStyle(fontSize: 25),
+                      textAlign: TextAlign.center),
+                  const SizedBox(height: 50),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        restart();
+                      });
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 200,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      child: const Text(
+                        "Replay",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ),
-                  child: const Text(
-                    "Replay",
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
+                ],
               ),
             ),
           )
